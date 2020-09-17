@@ -54,4 +54,14 @@ public class Root{
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
+
+    @Override
+    public String toString() {
+        return "Root{" +
+                "status='" + status + '\'' +
+                ", totalResults=" + totalResults +
+                ", articles=" + articles +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

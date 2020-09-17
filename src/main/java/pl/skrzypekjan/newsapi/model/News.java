@@ -75,4 +75,17 @@ public class News {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "newsId=" + newsId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", urlImage='" + urlImage + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }

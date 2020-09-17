@@ -31,7 +31,7 @@ public class Article{
     @JsonProperty("url")
     private String url;
     @JsonProperty("urlToImage")
-    private String urlToImage;
+    private String urlImage;
     @JsonProperty("publishedAt")
     private String publishedAt;
     @JsonProperty("content")
@@ -90,13 +90,13 @@ public class Article{
     }
 
     @JsonProperty("urlToImage")
-    public String getUrlToImage() {
-        return urlToImage;
+    public String getUrlImage() {
+        return urlImage;
     }
 
     @JsonProperty("urlToImage")
-    public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
+    public void setUrlImage(String urlToImage) {
+        this.urlImage = urlToImage;
     }
 
     @JsonProperty("publishedAt")
@@ -127,7 +127,7 @@ public class Article{
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", url='" + url + '\'' +
-                ", urlToImage='" + urlToImage + '\'' +
+                ", urlToImage='" + urlImage + '\'' +
                 ", publishedAt='" + publishedAt + '\'' +
                 ", content='" + content + '\'' +
                 '}';
