@@ -3,28 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>News-api</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div th:each="article : ${news}">
-    <form method="post" th:id="${article.title}" th:object="${article}">
-        <h3>Źródło: </h3>
-        <textarea style="width: 100%;" th:form="${article.title}" name="source" th:text="*{source}"></textarea>
-        <h3>Tytuł: </h3>
-        <textarea rows="4" style="width: 100%;" th:form="${article.title}" name="title" th:text="*{title}"></textarea>
-        <h3>Zdjęcie: </h3>
-        <img style="max-height: 400px;"  th:src="*{urlImage}"  th:attr="form=${article.title}"/>
-        <input type="text" hidden="hidden" name="urlImage" th:value="*{urlImage}">
-        <h3>Opis: </h3>
-        <textarea rows="4" style="width: 100%" th:form="${article.title}" name="description" th:text="${article.description}"></textarea>
-        <h3>Zawartość: </h3>
-        <textarea rows="4" style="width: 100%" th:form="${article.title}" name="content" th:text="${article.content}"></textarea>
-        <h3>Data publikacji: </h3>
-        <textarea rows="4" style="width: 100%" th:form="${article.title}" name="publishedAt" th:text="${article.publishedAt}"></textarea>
-        <h3>Autor: </h3>
-        <textarea rows="4" style="width: 100%" th:form="${article.title}" name="author" th:text="${article.author}"></textarea>
-        <br>
-        <input style="width: 5.2%" type="submit" value="Zapisz">
-    </form>
+<div class="jumbotron text-center">
+    <h1>News-api</h1>
+    <p>See what happend in the world!</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" th:each="article : ${news}" >
+            <div>
+                <form method="post" th:id="${article.title}" th:object="${article}">
+                    <h3>Źródło: </h3>
+                    <textarea style="width: 100%;" th:form="${article.title}" name="source" th:text="*{source.getName()}"></textarea>
+                    <h3>Tytuł: </h3>
+                    <textarea rows="4" style="width: 100%;" th:form="${article.title}" name="title" th:text="*{title}"></textarea>
+                    <h3>Zdjęcie: </h3>
+                    <img style="max-height: 400px;"  th:src="*{urlImage}"  th:attr="form=${article.title}"/>
+                    <input type="text" hidden="hidden" name="urlImage" th:value="*{urlImage}">
+                    <h3>Opis: </h3>
+                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="description" th:text="${article.description}"></textarea>
+                    <h3>Zawartość: </h3>
+                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="content" th:text="${article.content}"></textarea>
+                    <h3>Data publikacji: </h3>
+                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="publishedAt" th:text="${article.publishedAt}"></textarea>
+                    <h3>Autor: </h3>
+                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="author" th:text="${article.author}"></textarea>
+                    <br>
+                    <input style="width: 5.2%" type="submit" value="Zapisz">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
