@@ -20,9 +20,6 @@ public class HttpClient {
 
     private RestTemplate restTemplate;
 
-    @Value("${newsapi-key}")
-    private String keyApi;
-
     public HttpClient(){
         restTemplate = new RestTemplate();
     }
@@ -31,9 +28,9 @@ public class HttpClient {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
-        String baseUrl = "https://newsapi.org/v2/everything?q=bitcoin";
+        String baseUrl = "https://newsapi.org/v2/top-headlines?sources=bbc-news";
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(baseUrl)
-                .queryParam("apiKey", "31f027f7f6a6417da958fe7afe3a0944")
+                .queryParam("apiKey", "")
                 .queryParam("pageSize", "6");
 
         HttpEntity<Root> response = restTemplate.exchange(
