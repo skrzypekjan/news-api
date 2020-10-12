@@ -16,26 +16,17 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6" th:each="article : ${news}" >
+        <div class="col-sm-4" th:each="article : ${news}" >
             <div>
                 <form method="post" th:id="${article.title}" th:object="${article}">
-                    <h3>Źródło: </h3>
-                    <textarea style="width: 100%;" th:form="${article.title}" name="source" th:text="*{source.getName()}"></textarea>
-                    <h3>Tytuł: </h3>
-                    <textarea rows="4" style="width: 100%;" th:form="${article.title}" name="title" th:text="*{title}"></textarea>
-                    <h3>Zdjęcie: </h3>
-                    <img style="max-height: 400px;"  th:src="*{urlImage}"  th:attr="form=${article.title}"/>
+                    <h2 style="width: 100%;" th:form="${article.title}" name="source" th:text="*{source.getName()}"></h2>
+                    <h3 rows="4" style="width: 100%;" th:form="${article.title}" name="title" th:text="*{title}"></h3>
+                    <img style="width: 100%;"  th:src="*{urlImage}"  th:attr="form=${article.title}"/>
                     <input type="text" hidden="hidden" name="urlImage" th:value="*{urlImage}">
-                    <h3>Opis: </h3>
-                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="description" th:text="${article.description}"></textarea>
-                    <h3>Zawartość: </h3>
-                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="content" th:text="${article.content}"></textarea>
-                    <h3>Data publikacji: </h3>
-                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="publishedAt" th:text="${article.publishedAt}"></textarea>
-                    <h3>Autor: </h3>
-                    <textarea rows="4" style="width: 100%" th:form="${article.title}" name="author" th:text="${article.author}"></textarea>
+                    <h4 style="width: 100%" th:form="${article.title}" name="description" th:text="${article.description}"></h4>
+                    <textarea rows="5" style="width: 100%" th:form="${article.title}" name="content" th:text="${article.content}"></textarea>
                     <br>
-                    <input style="width: 5.2%" type="submit" value="Zapisz">
+                    <input type="submit" value="Save">
                 </form>
             </div>
         </div>
